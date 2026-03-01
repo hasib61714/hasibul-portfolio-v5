@@ -101,7 +101,8 @@ nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;back
 .hero-photo-wrap{position:relative;display:inline-block;margin-bottom:28px;opacity:0;animation:fd .7s forwards .55s;}
 .hero-photo-ring{width:148px;height:148px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));animation:spin 8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.hero-photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg);padding:3px;}
+@keyframes spin-rev{to{transform:rotate(-360deg);}}
+.hero-photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg);padding:3px;animation:spin-rev 8s linear infinite;}
 .hero-photo-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
 .hero-photo-status{position:absolute;bottom:6px;right:6px;width:20px;height:20px;background:#10b981;border-radius:50%;border:3px solid var(--bg);}
 .hero-typing span{color:var(--text);font-weight:600;}
