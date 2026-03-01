@@ -217,6 +217,8 @@ nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;back
 .plist li::before{content:'→';color:var(--c2);flex-shrink:0;}
 .parr{font-size:20px;color:var(--muted);transition:all .3s;align-self:center;}
 .prow:hover .parr{color:var(--c2);transform:translateX(4px);}
+.pgh-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 14px;border-radius:20px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.2);color:var(--c1);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;transition:all .2s;}
+.pgh-link:hover{background:rgba(99,102,241,.18);transform:translateY(-1px);}
 
 /* ══ KNOW GRID ══ */
 .know-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -487,6 +489,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     <li><a href="#skills" data-en="Skills" data-bn="দক্ষতা">Skills</a></li>
     <li><a href="#education" data-en="Education" data-bn="শিক্ষা">Education</a></li>
     <li><a href="#projects" data-en="Projects" data-bn="প্রজেক্ট">Projects</a></li>
+    <li><a href="#certifications" data-en="Certificates" data-bn="সার্টিফিকেট">Certificates</a></li>
     <li><a href="#github" data-en="GitHub" data-bn="গিটহাব">GitHub</a></li>
     <li><a href="#docs" data-en="Documents" data-bn="ডকুমেন্ট">Documents</a></li>
     <li><a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
@@ -558,8 +561,8 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 <!-- ══ STATS ══ -->
 <div class="stats">
   <div class="stats-grid">
-    <div class="scard rv d1"><div class="snum" data-target="3">0</div><div class="slbl" data-en="Projects Built" data-bn="প্রজেক্ট তৈরি">Projects Built</div></div>
-    <div class="scard rv d2"><div class="snum" data-target="10">0</div><div class="slbl" data-en="Technologies" data-bn="প্রযুক্তি">Technologies</div></div>
+    <div class="scard rv d1"><div class="snum" data-target="5">0</div><div class="slbl" data-en="Projects Built" data-bn="প্রজেক্ট তৈরি">Projects Built</div></div>
+    <div class="scard rv d2"><div class="snum" data-target="12">0</div><div class="slbl" data-en="Technologies" data-bn="প্রযুক্তি">Technologies</div></div>
     <div class="scard rv d3"><div class="snum" data-target="3">0</div><div class="slbl" data-en="Years Learning" data-bn="বছর শেখা">Years Learning</div></div>
     <div class="scard rv d4"><div class="snum">∞</div><div class="slbl" data-en="Curiosity" data-bn="কৌতূহল">Curiosity</div></div>
   </div>
@@ -671,6 +674,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     <button class="pf-btn" onclick="filterProjects(event,'python')">Python</button>
     <button class="pf-btn" onclick="filterProjects(event,'ml')">ML / AI</button>
     <button class="pf-btn" onclick="filterProjects(event,'laravel')">Laravel</button>
+    <button class="pf-btn" onclick="filterProjects(event,'js')">JavaScript</button>
   </div>
   <div class="proj-list">
     <div class="prow rv" data-tags="react laravel mysql">
@@ -683,6 +687,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="JWT auth, job posting & application tracking system" data-bn="JWT অথ, জব পোস্টিং ও আবেদন ট্র্যাকিং সিস্টেম">JWT auth, job posting &amp; application tracking system</li>
           <li data-en="Bilingual interface (Bengali/English) with department filtering" data-bn="বিভাগ ফিল্টারিং সহ দ্বিভাষিক ইন্টারফেস (বাংলা/ইংরেজি)">Bilingual interface (Bengali/English) with department filtering</li>
         </ul>
+        <a href="https://github.com/hasib61714/internship-hub" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
       </div>
       <div class="parr">→</div>
     </div>
@@ -696,6 +701,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="FastAPI backend with interactive React frontend" data-bn="ইন্টারেক্টিভ React ফ্রন্টএন্ড সহ FastAPI ব্যাকএন্ড">FastAPI backend with interactive React frontend</li>
           <li data-en="Data preprocessing, feature engineering & model evaluation" data-bn="ডেটা প্রিপ্রসেসিং, ফিচার ইঞ্জিনিয়ারিং ও মডেল মূল্যায়ন">Data preprocessing, feature engineering &amp; model evaluation</li>
         </ul>
+        <a href="https://github.com/hasib61714/heart-disease-prediction" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
       </div>
       <div class="parr">→</div>
     </div>
@@ -709,6 +715,34 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="TF-IDF feature extraction with NLP preprocessing pipeline" data-bn="NLP প্রিপ্রসেসিং পাইপলাইন সহ TF-IDF ফিচার নিষ্কাশন">TF-IDF feature extraction with NLP preprocessing pipeline</li>
           <li data-en="Multiple algorithms evaluated for reliable accuracy" data-bn="নির্ভরযোগ্য নির্ভুলতার জন্য একাধিক অ্যালগরিদম মূল্যায়িত">Multiple algorithms evaluated for reliable accuracy</li>
         </ul>
+      </div>
+      <div class="parr">→</div>
+    </div>
+    <div class="prow rv" data-tags="react js fullstack ai">
+      <div class="pnum">04</div>
+      <div>
+        <div class="ptitle" data-en="IMAP Bangladesh — AI Multi-Service Platform" data-bn="IMAP বাংলাদেশ — AI মাল্টি-সার্ভিস প্ল্যাটফর্ম">IMAP Bangladesh — AI Multi-Service Platform</div>
+        <div class="ptags"><span class="ptag">JavaScript</span><span class="ptag">AI</span><span class="ptag">GPS Tracking</span><span class="ptag">OTP Auth</span><span class="ptag">Chat</span></div>
+        <ul class="plist">
+          <li data-en="AI-powered service marketplace connecting users with verified providers" data-bn="ব্যবহারকারীদের সাথে যাচাই প্রদানকারীদের সংযুক্ত করার AI-চালিত সার্ভিস মার্কেটপ্লেস">AI-powered service marketplace connecting users with verified providers</li>
+          <li data-en="Phone OTP auth, live GPS tracking, real-time chat & AI recommendations" data-bn="ফোন OTP অথ, লাইভ GPS ট্র্যাকিং, রিয়েলটাইম চ্যাট ও AI রিকমেন্ডেশন">Phone OTP auth, live GPS tracking, real-time chat &amp; AI recommendations</li>
+          <li data-en="Covers emergency, household, and professional services across Bangladesh" data-bn="বাংলাদেশ জুড়ে হোম সার্ভিস, প্রফেশনাল সার্ভিস ও ইমার্জেন্সি সাপোর্ট">Covers emergency, household, and professional services across Bangladesh</li>
+        </ul>
+        <a href="https://github.com/hasib61714/imap-bangladesh" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
+      </div>
+      <div class="parr">→</div>
+    </div>
+    <div class="prow rv" data-tags="js html css">
+      <div class="pnum">05</div>
+      <div>
+        <div class="ptitle" data-en="To-Do List App" data-bn="টু-ডু লিস্ট অ্যাপ">To-Do List App</div>
+        <div class="ptags"><span class="ptag">HTML5</span><span class="ptag">CSS3</span><span class="ptag">JavaScript</span><span class="ptag">LocalStorage</span></div>
+        <ul class="plist">
+          <li data-en="Task manager with add, complete & delete functionality" data-bn="অ্যাড, সম্পন্ন ও ডিলিট ফিচার সহ টাস্ক ম্যানেজার">Task manager with add, complete &amp; delete functionality</li>
+          <li data-en="Data persists in LocalStorage across page refreshes" data-bn="পেজ রিফ্রেশের পরও LocalStorage-এ ডেটা সেভ থাকে">Data persists in LocalStorage across page refreshes</li>
+          <li data-en="Responsive design for both mobile & desktop" data-bn="মোবাইল ও ডেসকটপ দুটোতেই রেসপনসিভ ডিজাইন">Responsive design for both mobile &amp; desktop</li>
+        </ul>
+        <a href="https://github.com/hasib61714/first-project2" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
       </div>
       <div class="parr">→</div>
     </div>
@@ -777,8 +811,8 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     </div>
   </div>
   <div class="gh-grid rv">
-    <div class="gh-card"><div class="gh-num" data-target="3">0</div><div class="gh-label">Repositories</div></div>
-    <div class="gh-card"><div class="gh-num" data-target="47">0</div><div class="gh-label">Total Commits</div></div>
+    <div class="gh-card"><div class="gh-num" data-target="7">0</div><div class="gh-label">Repositories</div></div>
+    <div class="gh-card"><div class="gh-num" data-target="62">0</div><div class="gh-label">Total Commits</div></div>
     <div class="gh-card"><div class="gh-num" data-target="2">0</div><div class="gh-label">Stars Earned</div></div>
   </div>
   <!-- Contribution graph simulation -->
