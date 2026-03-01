@@ -435,6 +435,9 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 .cert-badge.done{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--c4);}
 .cert-badge.active{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);color:var(--c1);}
 .cert-modules{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.6;}
+.cert-group-label{grid-column:1/-1;display:flex;align-items:center;gap:16px;margin-top:8px;margin-bottom:4px;}
+.cert-group-label span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;white-space:nowrap;}
+.cert-group-label::after{content:'';flex:1;height:1px;background:var(--gb);}
 
 /* ══ EXPERIENCE ══ */
 .exp-grid{display:flex;flex-direction:column;gap:24px;max-width:900px;}
@@ -901,12 +904,14 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <div class="eyebrow rv" data-en="Achievements" data-bn="অর্জনসমূহ">Achievements</div>
   <h2 class="sec-title rv" data-en="Certifications &amp; Achievements" data-bn="সার্টিফিকেট ও অর্জন">Certifications &amp;<br>Achievements</h2>
   <div class="cert-grid">
-    <div class="cert-card cc1 rv d1">
-      <div class="cert-icon">🎓</div>
-      <div class="cert-name">B.Sc. in Computer Science &amp; Engineering</div>
-      <div class="cert-org">Green University of Bangladesh</div>
-      <div class="cert-date">2022 – Present</div>
-      <div class="cert-badge active">● Final Year</div>
+    <!-- Academic Qualifications -->
+    <div class="cert-group-label rv"><span>Academic Qualifications</span></div>
+    <div class="cert-card cc4 rv d1">
+      <div class="cert-icon">🏫</div>
+      <div class="cert-name">SSC — Secondary School Certificate</div>
+      <div class="cert-org">Imam Bari High School, Sherpur</div>
+      <div class="cert-date">2017 · EIIN: 113831</div>
+      <div class="cert-badge done">✓ GPA 5.00 — Golden A+</div>
     </div>
     <div class="cert-card cc3 rv d2">
       <div class="cert-icon">📋</div>
@@ -915,12 +920,22 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
       <div class="cert-date">2020 · EIIN: 111914</div>
       <div class="cert-badge done">✓ GPA 5.00 — Golden A+</div>
     </div>
-    <div class="cert-card cc4 rv d3">
-      <div class="cert-icon">🏫</div>
-      <div class="cert-name">SSC — Secondary School Certificate</div>
-      <div class="cert-org">Imam Bari High School, Sherpur</div>
-      <div class="cert-date">2017 · EIIN: 113831</div>
-      <div class="cert-badge done">✓ GPA 5.00 — Golden A+</div>
+    <div class="cert-card cc1 rv d3">
+      <div class="cert-icon">🎓</div>
+      <div class="cert-name">B.Sc. in Computer Science &amp; Engineering</div>
+      <div class="cert-org">Green University of Bangladesh</div>
+      <div class="cert-date">2022 – Present</div>
+      <div class="cert-badge active">● Final Year</div>
+    </div>
+    <!-- Professional Certifications -->
+    <div class="cert-group-label rv"><span>Professional Certifications</span></div>
+    <div class="cert-card cc7 rv d1">
+      <div class="cert-icon">🛡️</div>
+      <div class="cert-name">Cyber Security &amp; Ethical Hacking</div>
+      <div class="cert-org">Arena Web Security</div>
+      <div class="cert-date">18 Weeks · Professional Certified Course</div>
+      <div class="cert-modules">Website Pentesting · System Hacking · SQL Injection · Linux OS · OSINT · Digital Forensics · Social Engineering · Freelancing (HackerOne)</div>
+      <div class="cert-badge done">✓ Certified</div>
     </div>
     <div class="cert-card cc2 rv d2">
       <div class="cert-icon">🌐</div>
@@ -956,14 +971,6 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
       <div class="cert-org">Green University of Bangladesh</div>
       <div class="cert-date">Feb 2026</div>
       <div class="cert-badge done">✓ Official</div>
-    </div>
-    <div class="cert-card cc7 rv d1">
-      <div class="cert-icon">🛡️</div>
-      <div class="cert-name">Cyber Security &amp; Ethical Hacking</div>
-      <div class="cert-org">Arena Web Security</div>
-      <div class="cert-date">18 Weeks · Professional Certified Course</div>
-      <div class="cert-modules">Website Pentesting · System Hacking · SQL Injection · Linux OS · OSINT · Digital Forensics · Social Engineering · Freelancing (HackerOne)</div>
-      <div class="cert-badge done">✓ Certified</div>
     </div>
   </div>
 </section>
