@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md. Hasibul Hasan — Full-Stack Developer & ML Engineer</title>
 <meta name="description" content="Md. Hasibul Hasan — Final-year CSE student at Green University of Bangladesh. Full-Stack Developer & ML Engineer. React, Laravel, Python, FastAPI, Scikit-learn.">
-<meta name="keywords" content="Hasibul Hasan, portfolio, full-stack developer, ML engineer, React, Laravel, Python, Bangladesh, internship">
+<meta name="keywords" content="Hasibul Hasan, portfolio, full-stack developer, ML engineer, React, Laravel, Python, Bangladesh, Software Engineer Intern, Red Data, AR/VR">
 <meta name="author" content="Md. Hasibul Hasan">
 <meta property="og:title" content="Md. Hasibul Hasan — Full-Stack Developer & ML Engineer">
-<meta property="og:description" content="Final-year CSE student seeking internship. Skilled in React, Laravel, Python & ML.">
+<meta property="og:description" content="Software Engineer Intern at Red Data (Pvt.) Ltd. Open to full-time roles. Skilled in React, Laravel, Python, ML &amp; AR/VR.">
 <meta property="og:url" content="https://hasib61714.github.io/hasibul-portfolio-v5/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Md. Hasibul Hasan — Full-Stack Developer">
-<meta name="twitter:description" content="Final-year CSE student. React, Laravel, Python, ML. Available for internship.">
+<meta name="twitter:description" content="Software Engineer Intern at Red Data · AR/VR @ Battery Low Interactive · React, Laravel, Python, ML. Open to full-time.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -433,6 +433,28 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 .cert-badge.done{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--c4);}
 .cert-badge.active{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);color:var(--c1);}
 
+/* ══ EXPERIENCE ══ */
+.exp-grid{display:flex;flex-direction:column;gap:24px;max-width:900px;}
+.exp-card{background:var(--card);border:1px solid var(--gb);border-radius:20px;padding:32px;display:flex;gap:24px;transition:all .3s;position:relative;overflow:hidden;}
+.exp-card::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(99,102,241,.05),rgba(6,182,212,.05));opacity:0;transition:.3s;}
+.exp-card:hover::before{opacity:1;}
+.exp-card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.3);box-shadow:0 12px 40px rgba(0,0,0,.15);}
+.exp-logo{width:56px;height:56px;border-radius:14px;background:var(--glass);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+.exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;}
+.exp-role{font-size:18px;font-weight:700;color:var(--text);}
+.exp-company{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--c1);letter-spacing:.5px;margin-top:3px;}
+.exp-badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 12px;border-radius:20px;letter-spacing:1px;white-space:nowrap;}
+.exp-badge.exp-current{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#10b981;}
+.exp-badge.exp-done{background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);color:var(--c1);}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:4px;}
+.exp-location{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.exp-list{padding-left:18px;list-style:disc;color:var(--muted);font-size:13.5px;line-height:1.7;margin-bottom:14px;}
+.exp-list li{margin-bottom:4px;}
+.exp-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.exp-body{flex:1;}
+.exp-loc-link{color:var(--c1);text-decoration:none;}
+.exp-loc-link:hover{text-decoration:underline;}
+
 /* ══ RESPONSIVE ══ */
 @media(max-width:960px){
   nav{padding:10px 16px;gap:12px;}
@@ -452,6 +474,9 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   #btt{bottom:20px;right:20px;}
   .ham-btn{display:flex;}
   .cert-grid{grid-template-columns:1fr;}
+  .exp-card{flex-direction:column;gap:16px;}
+  .exp-logo{width:44px;height:44px;font-size:22px;}
+  .exp-header{flex-wrap:wrap;}
   .toast-wrap{right:16px;left:16px;bottom:80px;}
   .toast{max-width:100%;}
 }
@@ -488,6 +513,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <ul class="nav-links">
     <li><a href="#skills" data-en="Skills" data-bn="দক্ষতা">Skills</a></li>
     <li><a href="#education" data-en="Education" data-bn="শিক্ষা">Education</a></li>
+    <li><a href="#experience" data-en="Experience" data-bn="অভিজ্ঞতা">Experience</a></li>
     <li><a href="#projects" data-en="Projects" data-bn="প্রজেক্ট">Projects</a></li>
     <li><a href="#certifications" data-en="Certificates" data-bn="সার্টিফিকেট">Certificates</a></li>
     <li><a href="#github" data-en="GitHub" data-bn="গিটহাব">GitHub</a></li>
@@ -508,6 +534,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <button class="mob-close" onclick="toggleMob()" aria-label="Close menu">✕</button>
   <a href="#skills" onclick="toggleMob()">Skills</a>
   <a href="#education" onclick="toggleMob()">Education</a>
+  <a href="#experience" onclick="toggleMob()">Experience</a>
   <a href="#projects" onclick="toggleMob()">Projects</a>
   <a href="#certifications" onclick="toggleMob()">Certificates</a>
   <a href="#github" onclick="toggleMob()">GitHub</a>
@@ -517,7 +544,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 
 <!-- ══ HERO ══ -->
 <div class="hero">
-  <div class="hero-badge"><div class="bdot"></div><span data-en="AVAILABLE FOR INTERNSHIP — IMMEDIATE JOINING" data-bn="ইন্টার্নশিপের জন্য উপলব্ধ — তাৎক্ষণিক যোগদান">AVAILABLE FOR INTERNSHIP — IMMEDIATE JOINING</span></div>
+  <div class="hero-badge"><div class="bdot"></div><span data-en="SOFTWARE ENGINEER INTERN @ RED DATA · OPEN TO FULL-TIME" data-bn="রেড ডেটায় সফটওয়্যার ইঞ্জিনিয়ার ইন্টার্ন · ফুল-টাইমের জন্য উন্মুক্ত">SOFTWARE ENGINEER INTERN @ RED DATA · OPEN TO FULL-TIME</span></div>
   <h1 class="hero-name">
     <span class="l1">Md. Hasibul</span>
     <span class="l2 gt">Hasan</span>
@@ -528,6 +555,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <div class="hero-tags">
     <span class="hero-tag-chip">React · Laravel · Node.js</span>
     <span class="hero-tag-chip">Python · FastAPI · Scikit-learn</span>
+    <span class="hero-tag-chip">AR/VR · Battery Low Interactive</span>
     <span class="hero-tag-chip">CSE · Green University of BD</span>
   </div>
   <div class="hero-btns">
@@ -632,11 +660,18 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <div class="tl-desc" data-en="Heart Disease Prediction & Fake News Detection systems" data-bn="হার্ট ডিজিজ প্রেডিকশন ও ফেক নিউজ ডিটেকশন সিস্টেম">Heart Disease Prediction &amp; Fake News Detection systems</div>
         </div>
         <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2025</div>
+          <div class="tl-title" data-en="AR/VR Developer Training" data-bn="AR/VR ডেভেলপার প্রশিক্ষণ">AR/VR Developer Training</div>
+          <div class="tl-org">Battery Low Interactive Ltd.</div>
+          <div class="tl-desc" data-en="AR/VR training with hands-on live project development" data-bn="লাইভ প্রজেক্টে হাতে-কলমে AR/VR প্রশিক্ষণ">AR/VR training with hands-on live project development</div>
+        </div>
+        <div class="tl-item">
           <div class="tl-dot tl-dot-open"></div>
-          <div class="tl-date">2026 — NOW</div>
-          <div class="tl-title" data-en="Seeking Internship" data-bn="ইন্টার্নশিপ খুঁজছি">Seeking Internship</div>
-          <div class="tl-org org-open" data-en="Open to Opportunities" data-bn="সুযোগের জন্য উন্মুক্ত">Open to Opportunities</div>
-          <div class="tl-desc" data-en="Ready for immediate joining in software, web, or AI roles" data-bn="সফটওয়্যার, ওয়েব বা AI ভূমিকায় তাৎক্ষণিক যোগদানের জন্য প্রস্তুত">Ready for immediate joining in software, web, or AI roles</div>
+          <div class="tl-date">FEB 2026 — NOW</div>
+          <div class="tl-title" data-en="Software Engineer (Intern)" data-bn="সফটওয়্যার ইঞ্জিনিয়ার (ইন্টার্ন)">Software Engineer (Intern)</div>
+          <div class="tl-org org-open">Red Data (Pvt.) Ltd. · Gulshan, Dhaka</div>
+          <div class="tl-desc" data-en="Full-stack development in live production environment · Open to full-time" data-bn="লাইভ প্রডাকশন পরিবেশে ফুল-স্ট্যাক ডেভেলপমেন্ট · ফুল-টাইমের জন্য উন্মুক্ত">Full-stack development in live production environment · Open to full-time</div>
         </div>
       </div>
     </div>
@@ -659,6 +694,54 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <span class="pill">Quick Learner</span><span class="pill">Adaptable</span>
           <span class="pill">Bengali (Native)</span><span class="pill">English (Professional)</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section class="sec pt-0" id="experience">
+  <div class="eyebrow rv" data-en="Professional Journey" data-bn="পেশাদার যাত্রা">পেশাদার যাত্রা</div>
+  <h2 class="sec-title rv" data-en="Work Experience" data-bn="কাজের অভিজ্ঞতা">Work<br>Experience</h2>
+  <div class="exp-grid">
+    <div class="exp-card rv">
+      <div class="exp-logo">🔴</div>
+      <div class="exp-body">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role" data-en="Software Engineer (Intern)" data-bn="সফটওয়্যার ইঞ্জিনিয়ার (ইন্টার্ন)">Software Engineer (Intern)</div>
+            <div class="exp-company">Red Data (Pvt.) Ltd.</div>
+          </div>
+          <div class="exp-badge exp-current">● CURRENT</div>
+        </div>
+        <div class="exp-period">Feb 1, 2026 – Apr 30, 2026 · 3 months</div>
+        <div class="exp-location">📍 Simpletree Attalika (Level 19), 134 Gulshan Avenue, Dhaka 1212 · <a href="https://www.reddata.com.bd" target="_blank" rel="noopener noreferrer" class="exp-loc-link">reddata.com.bd</a></div>
+        <ul class="exp-list">
+          <li data-en="Contributing to full-stack software development in a live production environment" data-bn="লাইভ প্রডাকশন পরিবেশে ফুল-স্ট্যাক সফটওয়্যার ডেভেলপমেন্টে অবদান">Contributing to full-stack software development in a live production environment</li>
+          <li data-en="Working under CEO Moin Uddin Ahmed in an agile team environment" data-bn="CEO মইন উদ্দিন আহমেদের অধীনে একটি অ্যাজাইল দলে কাজ করা">Working under CEO Moin Uddin Ahmed in an agile team environment</li>
+          <li data-en="Building enterprise software solutions and real-world engineering skills" data-bn="এন্টারপ্রাইজ সফটওয়্যার সোলিউশন তৈরি ও বাস্তব প্রকৌশল দক্ষতা অর্জন">Building enterprise software solutions and real-world engineering skills</li>
+        </ul>
+        <div class="exp-tags"><span class="ptag">Full-Stack Dev</span><span class="ptag">Software Engineering</span><span class="ptag">Agile</span></div>
+      </div>
+    </div>
+    <div class="exp-card rv">
+      <div class="exp-logo">🔋</div>
+      <div class="exp-body">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role" data-en="AR/VR Developer (Training)" data-bn="AR/VR ডেভেলপার (প্রশিক্ষণার্থী)">AR/VR Developer (Training)</div>
+            <div class="exp-company">Battery Low Interactive Ltd.</div>
+          </div>
+          <div class="exp-badge exp-done">COMPLETED</div>
+        </div>
+        <div class="exp-period">2025 · Industrial Training</div>
+        <div class="exp-location">📍 Bangladesh</div>
+        <ul class="exp-list">
+          <li data-en="Completed specialized AR/VR development training program" data-bn="বিশেষায়িত AR/VR ডেভেলপমেন্ট প্রশিক্ষণ প্রোগ্রাম সম্পন্ন">Completed specialized AR/VR development training program</li>
+          <li data-en="Worked on live AR/VR projects applying real-world XR techniques" data-bn="বাস্তব XR প্রযুক্তি প্রয়োগ করে লাইভ AR/VR প্রজেক্টে কাজ">Worked on live AR/VR projects applying real-world XR techniques</li>
+          <li data-en="Gained practical experience in immersive technology development" data-bn="ইমার্সিভ প্রযুক্তি ডেভেলপমেন্টে ব্যাবহারিক অভিজ্ঞতা অর্জন">Gained practical experience in immersive technology development</li>
+        </ul>
+        <div class="exp-tags"><span class="ptag">AR</span><span class="ptag">VR</span><span class="ptag">XR Development</span><span class="ptag">Unity</span></div>
       </div>
     </div>
   </div>
