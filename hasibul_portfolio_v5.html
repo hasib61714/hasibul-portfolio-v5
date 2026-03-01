@@ -178,7 +178,10 @@ nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;back
 .gh-num{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--c2),var(--c1));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
 .gh-label{font-size:12px;color:var(--muted);}
 .gh-username{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;}
-.gh-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c3));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;}
+.gh-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c3));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;overflow:hidden;flex-shrink:0;font-size:18px;}
+.gh-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
+.exp-supervisor{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;padding:5px 12px;font-size:11.5px;color:var(--text);margin-top:8px;}
+.exp-supervisor strong{color:var(--c1);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;margin-right:4px;}
 .gh-name{font-weight:700;}
 .gh-handle{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
 .gh-link{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:30px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);color:var(--c1);text-decoration:none;font-size:13px;font-weight:600;transition:all .2s;font-family:'JetBrains Mono',monospace;}
@@ -463,6 +466,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 .exp-list li{margin-bottom:4px;}
 .exp-tags{display:flex;gap:6px;flex-wrap:wrap;}
 .exp-body{flex:1;}
+.exp-supervisor + .exp-tags{margin-top:10px;}
 .exp-loc-link{color:var(--c1);text-decoration:none;}
 .exp-loc-link:hover{text-decoration:underline;}
 
@@ -798,6 +802,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="Working under CEO Moin Uddin Ahmed in an agile team environment" data-bn="CEO মইন উদ্দিন আহমেদের অধীনে একটি অ্যাজাইল দলে কাজ করা">Working under CEO Moin Uddin Ahmed in an agile team environment</li>
           <li data-en="Building enterprise software solutions and real-world engineering skills" data-bn="এন্টারপ্রাইজ সফটওয়্যার সোলিউশন তৈরি ও বাস্তব প্রকৌশল দক্ষতা অর্জন">Building enterprise software solutions and real-world engineering skills</li>
         </ul>
+        <div class="exp-supervisor"><strong>Supervisor</strong> Rukonuzzaman &nbsp;·&nbsp; Software Engineer, Red Data &nbsp;·&nbsp; <a href="mailto:rukon@reddata.com.bd" class="exp-loc-link">rukon@reddata.com.bd</a></div>
         <div class="exp-tags"><span class="ptag">Full-Stack Dev</span><span class="ptag">Software Engineering</span><span class="ptag">Agile</span></div>
       </div>
     </div>
@@ -1073,7 +1078,9 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <div class="eyebrow rv">GitHub Activity</div>
   <h2 class="sec-title rv">Open Source &amp;<br>Contributions</h2>
   <div class="gh-username rv">
-    <div class="gh-avatar">HH</div>
+    <div class="gh-avatar">
+      <img src="https://github.com/hasib61714.png" alt="hasib61714" onerror="this.parentElement.innerHTML='HH'">
+    </div>
     <div>
       <div class="gh-name">hasib61714</div>
       <div class="gh-handle">github.com/hasib61714</div>
@@ -1579,7 +1586,25 @@ function generateCV(){
 
 </body></html>`;
 
-  const blob = new Blob([html], {type:'text/html'});
+  // ── EXPERIENCE SECTION ──
+  const expSection = `
+<div class="sec-head">Work Experience</div>
+<div class="edu-row" style="margin-bottom:1px"><span class="edu-deg">Software Engineer (Intern)</span><span class="edu-year">Feb 2026 – Apr 2026</span></div>
+<div class="edu-inst">Red Data (Pvt.) Ltd. &nbsp;&middot;&nbsp; Gulshan Avenue, Dhaka 1212</div>
+<div style="font-size:9.5pt;color:#333;margin-bottom:1px;">Industrial Supervisor: Engr. Rukonuzzaman &nbsp;&middot;&nbsp; Software Engineer &nbsp;&middot;&nbsp; rukon@reddata.com.bd</div>
+<ul class="proj-ul" style="margin:3px 0 10px;">
+  <li>Contributing to full-stack software development in a live production environment</li>
+  <li>Working in an agile team environment under CEO Moin Uddin Ahmed</li>
+  <li>Building enterprise software solutions and developing real-world engineering skills</li>
+</ul>
+<div class="edu-row" style="margin-bottom:1px"><span class="edu-deg">Business Development Executive Manager</span><span class="edu-year">2022 – Present</span></div>
+<div class="edu-inst">Mahin Enterprise &nbsp;&middot;&nbsp; Full-time &nbsp;&middot;&nbsp; 4+ Years</div>
+<ul class="proj-ul" style="margin:3px 0 0;">
+  <li>Leading business development strategy, client acquisition &amp; partnerships</li>
+  <li>Leveraging multilingual skills (Bengali, English, Hindi, Urdu, Chinese, Japanese) for international business</li>
+</ul>`;
+
+  const blob = new Blob([html.replace('<!-- CAREER OBJECTIVE -->', expSection+'\n<!-- CAREER OBJECTIVE -->')], {type:'text/html'});
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href = url;
@@ -1587,6 +1612,81 @@ function generateCV(){
   a.click();
   URL.revokeObjectURL(url);
   toast('CV downloaded! Open in Chrome/Edge → Ctrl+P → Margins: None → Save as PDF','success',6000);
+}
+
+// ══ COVER LETTER GENERATOR ══
+function generateCoverLetter(){
+  const name    = document.getElementById('g-name').value.trim()     || 'Md. Hasibul Hasan';
+  const email   = document.getElementById('g-email').value.trim()    || 'mh.hasan14200@gmail.com';
+  const phone   = document.getElementById('g-phone').value.trim()    || '+880 1794 517497';
+  const github  = document.getElementById('g-github').value.trim()   || 'github.com/hasib61714';
+  const linkedin= document.getElementById('g-linkedin').value.trim() || 'linkedin.com/in/md-hasibul-hasan';
+  const company = document.getElementById('g-company').value.trim()  || 'Red Data (Pvt.) Ltd.';
+  const position= document.getElementById('g-position').value.trim() || 'Software Engineer Intern';
+  const hr      = document.getElementById('g-hr').value.trim()       || 'The Hiring Manager';
+  const compAddr= document.getElementById('g-comp-addr').value.trim()|| 'Dhaka, Bangladesh';
+  const today   = new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
+
+  const cl = `<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Times New Roman',Times,serif;background:#fff;color:#000;font-size:11.5pt;line-height:1.7;padding:22mm 22mm 18mm 22mm;max-width:210mm;margin:0 auto;}
+  .cl-header{text-align:right;margin-bottom:22px;}
+  .cl-name{font-size:16pt;font-weight:700;letter-spacing:.3px;}
+  .cl-contact{font-size:9.5pt;color:#333;margin-top:3px;}
+  .cl-contact span{margin:0 6px;}
+  hr.cl-hr{border:none;border-top:1.5px solid #000;margin:10px 0 22px;}
+  .cl-date{margin-bottom:18px;font-size:11pt;}
+  .cl-to{margin-bottom:18px;font-size:11pt;line-height:1.5;}
+  .cl-to strong{font-size:11.5pt;}
+  .cl-subj{font-weight:700;font-size:11.5pt;margin-bottom:18px;text-decoration:underline;}
+  .cl-body p{margin-bottom:14px;font-size:11pt;text-align:justify;}
+  .cl-close{margin-top:26px;font-size:11pt;}
+  .cl-sig-line{border-top:1.2px solid #000;width:120px;margin:30px 0 4px;}
+  .cl-sig-name{font-weight:700;font-size:11.5pt;}
+  .cl-sig-info{font-size:10pt;color:#333;}
+  @media print{body{padding:16mm 18mm;-webkit-print-color-adjust:exact;} @page{size:A4;margin:0;}}
+</style>
+</head><body>
+<div class="cl-header">
+  <div class="cl-name">${name}</div>
+  <div class="cl-contact">
+    <span>${phone}</span> &middot; <span>${email}</span><br>
+    <span>${github}</span> &middot; <span>${linkedin}</span>
+  </div>
+</div>
+<hr class="cl-hr">
+<div class="cl-date">${today}</div>
+<div class="cl-to">
+  <strong>${hr}</strong><br>
+  ${company}<br>
+  ${compAddr}
+</div>
+<div class="cl-subj">Subject: Application for the Position of ${position}</div>
+<div class="cl-body">
+  <p>Dear ${hr},</p>
+  <p>I am writing to express my strong interest in the <strong>${position}</strong> position at <strong>${company}</strong>. I am a final-year B.Sc. CSE student at Green University of Bangladesh with hands-on experience in full-stack web development, machine learning, and AR/VR — and I am confident that my skills align well with the requirements of this role.</p>
+  <p>Currently serving as a Software Engineer Intern at <strong>Red Data (Pvt.) Ltd.</strong>, I have been contributing to full-stack software development in a live production environment under the supervision of Engr. Rukonuzzaman (Software Engineer). This experience has sharpened my ability to build scalable, real-world enterprise solutions while working in agile teams.</p>
+  <p>My key technical competencies include React, Laravel, Node.js, Python (FastAPI, Scikit-learn), MySQL, MongoDB, and REST API design. I have also completed specialised training in AR/VR development (Battery Low Interactive Ltd.) and Cyber Security &amp; Ethical Hacking (Arena Web Security, certified). Additionally, I bring multilingual communication skills — fluent in Bengali, English, Hindi, Urdu, Chinese, and Japanese — which enhance my ability to collaborate in diverse international settings.</p>
+  <p>Throughout my academic and professional journey, I have built projects such as an Internship Hub platform (React, Laravel, JWT), a Heart Disease Prediction system (Python, ML, FastAPI), and several enterprise-grade TypeScript applications. These projects reflect my commitment to clean code, problem-solving, and delivering value-driven software.</p>
+  <p>I am highly motivated, a quick learner, and eager to contribute meaningfully to ${company}'s mission. I would welcome the opportunity to discuss how I can add value to your team. Please find my CV attached for your reference.</p>
+  <p>Thank you sincerely for your time and consideration. I look forward to hearing from you.</p>
+</div>
+<div class="cl-close">Yours sincerely,</div>
+<div class="cl-sig-line"></div>
+<div class="cl-sig-name">${name}</div>
+<div class="cl-sig-info">${position} Applicant &middot; ${email} &middot; ${phone}</div>
+</body></html>`;
+
+  const blob = new Blob([cl],{type:'text/html'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = `${name.replace(/ /g,'_')}_Cover_Letter.html`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Cover Letter downloaded! Open in Chrome/Edge → Ctrl+P → Margins: Minimum → Save as PDF','success',6000);
 }
 
 // ══ TOAST ══
