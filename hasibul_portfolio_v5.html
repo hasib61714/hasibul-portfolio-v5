@@ -219,6 +219,7 @@ nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;back
 .prow:hover .parr{color:var(--c2);transform:translateX(4px);}
 .pgh-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 14px;border-radius:20px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.2);color:var(--c1);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;transition:all .2s;}
 .pgh-link:hover{background:rgba(99,102,241,.18);transform:translateY(-1px);}
+.ppriv-note{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:5px 14px;border-radius:20px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.18);color:#ef4444;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;}
 
 /* ══ KNOW GRID ══ */
 .know-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -591,8 +592,8 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 <!-- ══ STATS ══ -->
 <div class="stats">
   <div class="stats-grid">
-    <div class="scard rv d1"><div class="snum" data-target="5">0</div><div class="slbl" data-en="Projects Built" data-bn="প্রজেক্ট তৈরি">Projects Built</div></div>
-    <div class="scard rv d2"><div class="snum" data-target="12">0</div><div class="slbl" data-en="Technologies" data-bn="প্রযুক্তি">Technologies</div></div>
+    <div class="scard rv d1"><div class="snum" data-target="8">0</div><div class="slbl" data-en="Projects Built" data-bn="প্রজেক্ট তৈরি">Projects Built</div></div>
+    <div class="scard rv d2"><div class="snum" data-target="15">0</div><div class="slbl" data-en="Technologies" data-bn="প্রযুক্তি">Technologies</div></div>
     <div class="scard rv d3"><div class="snum" data-target="3">0</div><div class="slbl" data-en="Years Learning" data-bn="বছর শেখা">Years Learning</div></div>
     <div class="scard rv d4"><div class="snum">∞</div><div class="slbl" data-en="Curiosity" data-bn="কৌতূহল">Curiosity</div></div>
   </div>
@@ -764,6 +765,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     <button class="pf-btn" onclick="filterProjects(event,'ml')">ML / AI</button>
     <button class="pf-btn" onclick="filterProjects(event,'laravel')">Laravel</button>
     <button class="pf-btn" onclick="filterProjects(event,'js')">JavaScript</button>
+    <button class="pf-btn" onclick="filterProjects(event,'typescript')">TypeScript</button>
   </div>
   <div class="proj-list">
     <div class="prow rv" data-tags="react laravel mysql">
@@ -832,6 +834,48 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="Responsive design for both mobile & desktop" data-bn="মোবাইল ও ডেসকটপ দুটোতেই রেসপনসিভ ডিজাইন">Responsive design for both mobile &amp; desktop</li>
         </ul>
         <a href="https://github.com/hasib61714/first-project2" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
+      </div>
+      <div class="parr">→</div>
+    </div>
+    <div class="prow rv" data-tags="react typescript fullstack erp">
+      <div class="pnum">06</div>
+      <div>
+        <div class="ptitle" data-en="HairHub ERP System" data-bn="হেয়ারহাব ERP সিস্টেম">HairHub ERP System</div>
+        <div class="ptags"><span class="ptag">React</span><span class="ptag">TypeScript</span><span class="ptag">Supabase</span><span class="ptag">Capacitor</span><span class="ptag">Tailwind</span></div>
+        <ul class="plist">
+          <li data-en="Full ERP for hair products business: factory, inventory & cash flow" data-bn="হেয়ার প্রডাক্ট ব্যবসায়ের পরিপূর্ণ ERP: ফ্যাক্টরি, ইনভেন্টরি ও নগদ প্রবাহ">Full ERP for hair products business: factory, inventory &amp; cash flow</li>
+          <li data-en="Challan printing, party settlement & production flow tracking" data-bn="চালান প্রিন্ট, পার্টি সেটেলমেন্ট ও প্রডাকশন ফ্লো ত্র্যাকিং">Challan printing, party settlement &amp; production flow tracking</li>
+          <li data-en="Mobile-ready via Capacitor with Supabase real-time backend" data-bn="Supabase রিয়েলটাইম ব্যাকএন্ড সহ Capacitor-এ মোবাইল-রেডি">Mobile-ready via Capacitor with Supabase real-time backend</li>
+        </ul>
+        <span class="ppriv-note">🔒 Private Repository</span>
+      </div>
+      <div class="parr">→</div>
+    </div>
+    <div class="prow rv" data-tags="react typescript fullstack ecommerce">
+      <div class="pnum">07</div>
+      <div>
+        <div class="ptitle" data-en="TrendHaus — E-Commerce Platform" data-bn="ট্রেন্ডহাউস — ই-কমার্স প্ল্যাটফর্ম">TrendHaus — E-Commerce Platform</div>
+        <div class="ptags"><span class="ptag">React</span><span class="ptag">TypeScript</span><span class="ptag">Supabase</span><span class="ptag">Admin Panel</span><span class="ptag">Tailwind</span></div>
+        <ul class="plist">
+          <li data-en="Full e-commerce with cart, checkout, order tracking & wishlist" data-bn="কার্ট, চেকআউট, অর্ডার ট্র্যাকিং ও ওয়িশলিস্ট সহ পূর্ণ ই-কমার্স">Full e-commerce with cart, checkout, order tracking &amp; wishlist</li>
+          <li data-en="Full admin panel: products, orders, inventory, payments & coupons" data-bn="প্রডাক্ট, অর্ডার, ইনভেন্টরি, পেমেন্ট ও কুপন সহ পূর্ণ অ্যাডমিন প্যানেল">Full admin panel: products, orders, inventory, payments &amp; coupons</li>
+          <li data-en="Auth, customer profiles, shareable wishlists & newsletter system" data-bn="অথ, ডিসিউসিট সাবসক্রাইবার প্রফাইল, শেয়ারযোগ্য ওয়িশলিস্ট ও নিউজলেটার সিস্টেম">Auth, customer profiles, shareable wishlists &amp; newsletter system</li>
+        </ul>
+        <span class="ppriv-note">🔒 Private Repository</span>
+      </div>
+      <div class="parr">→</div>
+    </div>
+    <div class="prow rv" data-tags="react typescript ai">
+      <div class="pnum">08</div>
+      <div>
+        <div class="ptitle" data-en="Akash Sky Helper — AI Dev Assistant" data-bn="আকাশ স্কাই হেলপার — AI ডেভ অ্যাসিস্ট্যান্ট">Akash Sky Helper — AI Dev Assistant</div>
+        <div class="ptags"><span class="ptag">React</span><span class="ptag">TypeScript</span><span class="ptag">AI Chat</span><span class="ptag">Tailwind</span></div>
+        <ul class="plist">
+          <li data-en="AI-powered developer assistant with chat & task management" data-bn="চ্যাট ও টাস্ক ম্যানেজমেন্ট সহ AI-চালিত ডেভেলপার অ্যাসিস্ট্যান্ট">AI-powered developer assistant with chat &amp; task management</li>
+          <li data-en="Interactive dashboard with dev tools panel & sidebar navigation" data-bn="ডেভ টুলস প্যানেল ও সাইডবার নেভিগেশন সহ ইন্টারেক্টিভ ড্যাশবোর্ড">Interactive dashboard with dev tools panel &amp; sidebar navigation</li>
+          <li data-en="Built with shadcn-ui components and clean TypeScript architecture" data-bn="shadcn-ui কম্পোনেন্ট ও পরিষ্কার TypeScript আর্কিটেকচার দিয়ে তৈরি">Built with shadcn-ui components and clean TypeScript architecture</li>
+        </ul>
+        <span class="ppriv-note">🔒 Private Repository</span>
       </div>
       <div class="parr">→</div>
     </div>
@@ -908,7 +952,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     </div>
   </div>
   <div class="gh-grid rv">
-    <div class="gh-card"><div class="gh-num" data-target="7">0</div><div class="gh-label">Repositories</div></div>
+    <div class="gh-card"><div class="gh-num" data-target="12">0</div><div class="gh-label">Repositories</div></div>
     <div class="gh-card"><div class="gh-num" data-target="62">0</div><div class="gh-label">Total Commits</div></div>
     <div class="gh-card"><div class="gh-num" data-target="2">0</div><div class="gh-label">Stars Earned</div></div>
   </div>
