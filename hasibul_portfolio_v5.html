@@ -98,7 +98,12 @@ nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;back
 @keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
 /* TYPING ANIMATION */
-.hero-typing{font-size:clamp(16px,2.2vw,22px);color:var(--muted);margin-bottom:20px;opacity:0;animation:fd .7s forwards .9s;min-height:32px;}
+.hero-photo-wrap{position:relative;display:inline-block;margin-bottom:28px;opacity:0;animation:fd .7s forwards .55s;}
+.hero-photo-ring{width:148px;height:148px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));animation:spin 8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg);padding:3px;}
+.hero-photo-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
+.hero-photo-status{position:absolute;bottom:6px;right:6px;width:20px;height:20px;background:#10b981;border-radius:50%;border:3px solid var(--bg);}
 .hero-typing span{color:var(--text);font-weight:600;}
 .typing-cursor{display:inline-block;width:2px;height:1.1em;background:var(--c2);margin-left:2px;vertical-align:middle;animation:cur 1s step-end infinite;}
 @keyframes cur{0%,100%{opacity:1;}50%{opacity:0;}}
@@ -551,6 +556,14 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 <!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-badge"><div class="bdot"></div><span data-en="SOFTWARE ENGINEER INTERN @ RED DATA · OPEN TO FULL-TIME" data-bn="রেড ডেটায় সফটওয়্যার ইঞ্জিনিয়ার ইন্টার্ন · ফুল-টাইমের জন্য উন্মুক্ত">SOFTWARE ENGINEER INTERN @ RED DATA · OPEN TO FULL-TIME</span></div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-ring">
+      <div class="hero-photo-inner">
+        <img src="photo.jpeg" alt="Md. Hasibul Hasan" width="142" height="142">
+      </div>
+    </div>
+    <div class="hero-photo-status"></div>
+  </div>
   <h1 class="hero-name">
     <span class="l1">Md. Hasibul</span>
     <span class="l2 gt">Hasan</span>
