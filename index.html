@@ -485,11 +485,35 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   #btt{bottom:20px;right:20px;}
   .ham-btn{display:flex;}
   .cert-grid{grid-template-columns:1fr;}
-  .exp-card{flex-direction:column;gap:16px;}
+  .exp-card{flex-direction:column;gap:16px;padding:24px 20px;}
   .exp-logo{width:44px;height:44px;font-size:22px;}
   .exp-header{flex-wrap:wrap;}
+  .exp-role{font-size:16px;}
+  .exp-period{font-size:10.5px;}
+  .hero-title{font-size:clamp(38px,8vw,72px);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
   .toast-wrap{right:16px;left:16px;bottom:80px;}
   .toast{max-width:100%;}
+}
+@media(max-width:600px){
+  .exp-card{padding:18px 16px;gap:12px;}
+  .exp-role{font-size:15px;}
+  .exp-badge{font-size:9px;padding:3px 9px;}
+  .exp-company{font-size:11px;}
+  .exp-period{font-size:10px;}
+  .exp-location{font-size:11px;}
+  .exp-list{font-size:12.5px;line-height:1.65;}
+  .exp-list li{margin-bottom:3px;}
+  .ptag{font-size:10px;padding:2px 8px;}
+  .exp-tags{gap:4px;}
+  .sec-title{font-size:clamp(28px,7vw,48px);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .cert-grid{grid-template-columns:1fr;}
+  .cert-card{padding:18px;}
+  .cert-modules{font-size:10.5px;}
+  .hero-photo-wrap{width:90px;height:90px;}
+  .hero-photo-inner{inset:4px;}
+  .hero-photo-status{width:14px;height:14px;right:4px;bottom:4px;}
 }
 </style>
 </head>
@@ -797,6 +821,8 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
         <div class="exp-tags"><span class="ptag">Business Dev</span><span class="ptag">Management</span><span class="ptag">Client Relations</span><span class="ptag">Multilingual</span></div>
       </div>
     </div>
+    <div class="exp-card rv">
+      <div class="exp-logo">🔋</div>
       <div class="exp-body">
         <div class="exp-header">
           <div>
@@ -813,6 +839,26 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="Gained practical experience in immersive technology development" data-bn="ইমার্সিভ প্রযুক্তি ডেভেলপমেন্টে ব্যাবহারিক অভিজ্ঞতা অর্জন">Gained practical experience in immersive technology development</li>
         </ul>
         <div class="exp-tags"><span class="ptag">AR</span><span class="ptag">VR</span><span class="ptag">XR Development</span><span class="ptag">Unity</span></div>
+      </div>
+    </div>
+    <div class="exp-card rv">
+      <div class="exp-logo">🛡️</div>
+      <div class="exp-body">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role" data-en="Cyber Security Trainee" data-bn="সাইবার সিকিউরিটি প্রশিক্ষণার্থী">Cyber Security Trainee</div>
+            <div class="exp-company">Arena Web Security</div>
+          </div>
+          <div class="exp-badge exp-done">CERTIFIED</div>
+        </div>
+        <div class="exp-period">2023 – 2024 · 18 Weeks · Training &amp; Live Project</div>
+        <div class="exp-location">📍 Bangladesh</div>
+        <ul class="exp-list">
+          <li data-en="Completed 18-week Cyber Security &amp; Ethical Hacking training with live project work" data-bn="লাইভ প্রজেক্ট কাজ সহ ১৮ সপ্তাহের সাইবার সিকিউরিটি ও এথিক্যাল হ্যাকিং প্রশিক্ষণ সম্পন্ন">Completed 18-week Cyber Security &amp; Ethical Hacking training with live project work</li>
+          <li data-en="Practised website pentesting, SQL injection, OSINT &amp; social engineering techniques" data-bn="ওয়েবসাইট পেন্টেস্টিং, SQL ইনজেকশন, OSINT ও সোশ্যাল ইঞ্জিনিয়ারিং কৌশল অনুশীলন">Practised website pentesting, SQL injection, OSINT &amp; social engineering techniques</li>
+          <li data-en="Trained in digital forensics, Linux OS, network security &amp; HackerOne bug bounty" data-bn="ডিজিটাল ফরেনসিক্স, Linux OS, নেটওয়ার্ক সিকিউরিটি ও HackerOne বাগ বাউন্টিতে প্রশিক্ষিত">Trained in digital forensics, Linux OS, network security &amp; HackerOne bug bounty</li>
+        </ul>
+        <div class="exp-tags"><span class="ptag">Web Pentesting</span><span class="ptag">SQL Injection</span><span class="ptag">Linux OS</span><span class="ptag">OSINT</span><span class="ptag">Digital Forensics</span></div>
       </div>
     </div>
   </div>
