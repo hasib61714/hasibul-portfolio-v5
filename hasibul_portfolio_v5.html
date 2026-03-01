@@ -1418,193 +1418,292 @@ function generateCV(){
   const github   = document.getElementById('g-github').value.trim()  || 'github.com/hasib61714';
   const linkedin = document.getElementById('g-linkedin').value.trim()|| 'linkedin.com/in/md-hasibul-hasan';
   const skillsRaw= document.getElementById('g-skills').value.trim()  || 'React, Laravel, Node.js, Python, FastAPI, Scikit-learn, MySQL, MongoDB';
-  const objective= document.getElementById('g-objective').value.trim()|| '';
-
-  // Build skill rows matching the uploaded CV table style
-  const skillGroups = [
-    {cat:'Languages',      items:'C, C++, Java, Python, JavaScript'},
-    {cat:'Web Technologies',items:'HTML5, CSS3, JavaScript (AJAX, JSON), React, Laravel, Node.js, Express.js, REST API'},
-    {cat:'AI / ML',        items:'Scikit-learn, Pandas, NumPy, Data Preprocessing, Model Evaluation'},
-    {cat:'Databases',      items:'MySQL, MongoDB'},
-    {cat:'Tools',          items:'Git, GitHub, VS Code, Postman, Vercel, NetBeans'},
-  ];
-  // Override first row items from form input if user customised
-  if(skillsRaw) skillGroups[0].items = skillsRaw;
-
-  const skillRows = skillGroups.map(g=>`
-    <tr>
-      <td class="sk-cat">${g.cat}</td>
-      <td class="sk-val">${g.items}</td>
-    </tr>`).join('');
-
+  const objective= document.getElementById('g-objective').value.trim()|| 'Final-year CSE student and active Software Engineer Intern at Red Data (Pvt.) Ltd., passionate about full-stack development, machine learning, and cybersecurity. Seeking a full-time software engineering role to apply real-world skills and contribute to impactful products.';
   const today = new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
 
   const html = `<!DOCTYPE html>
-<html><head><meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${name} — CV</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Linux+Libertine&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    font-family:'Times New Roman',Times,serif;
-    background:#fff;color:#000;
-    font-size:11pt;line-height:1.45;
-    padding:18mm 18mm 14mm 18mm;
-    max-width:210mm;margin:0 auto;
-  }
-  /* ── HEADER ── */
-  .cv-name{text-align:center;font-size:20pt;font-weight:700;letter-spacing:.5px;margin-bottom:3px;}
-  .cv-sub {text-align:center;font-size:10.5pt;color:#333;margin-bottom:6px;}
-  .cv-contact{text-align:center;font-size:9.5pt;color:#222;margin-bottom:3px;}
-  .cv-contact span{margin:0 7px;}
-  hr.thick{border:none;border-top:2px solid #000;margin:7px 0 0;}
-  hr.thin {border:none;border-top:.75px solid #000;margin:1px 0 8px;}
-  /* ── SECTION ── */
-  .sec-head{font-size:11.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
-            border-bottom:1.5px solid #000;padding-bottom:1px;margin:13px 0 5px;}
-  /* ── EDUCATION ── */
-  .edu-row{display:flex;justify-content:space-between;align-items:baseline;}
-  .edu-deg{font-weight:700;font-size:10.5pt;}
-  .edu-year{font-size:10pt;white-space:nowrap;}
-  .edu-inst{font-size:10pt;color:#333;margin-bottom:1px;}
-  /* ── SKILLS TABLE ── */
-  .sk-table{width:100%;border-collapse:collapse;font-size:10pt;}
-  .sk-table td{padding:2.5px 6px 2.5px 0;vertical-align:top;}
-  .sk-cat{font-weight:700;white-space:nowrap;width:140px;}
-  .sk-val{color:#111;}
-  /* ── PROJECTS ── */
-  .proj-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1px;}
-  .proj-name{font-weight:700;font-size:10.5pt;}
-  .proj-tech{font-size:9.5pt;color:#333;font-style:italic;}
-  .proj-wrap{margin-bottom:9px;}
-  ul.proj-ul{padding-left:16px;margin:0;}
-  ul.proj-ul li{font-size:10pt;margin-bottom:1.5px;color:#111;}
-  /* ── PARA SECTIONS ── */
-  .para{font-size:10pt;color:#111;line-height:1.55;}
-  /* ── DECLARATION ── */
-  .decl-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;font-size:10pt;}
-  .decl-left{max-width:55%;}
-  .decl-right{text-align:right;}
-  .sig-line{border-top:1.2px solid #000;width:110px;margin-bottom:3px;}
-  @media print{
-    body{padding:14mm 16mm 12mm 16mm;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    @page{size:A4;margin:0;}
-  }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{font-family:'Inter',Arial,sans-serif;background:#f4f6fb;color:#1a1a2e;font-size:9.5pt;line-height:1.5;}
+/* ── PAGE ── */
+.page{width:210mm;min-height:297mm;margin:0 auto;background:#fff;display:grid;grid-template-columns:68mm 1fr;box-shadow:0 0 40px rgba(0,0,0,.15);}
+/* ── SIDEBAR ── */
+.sidebar{background:linear-gradient(175deg,#1e1b4b 0%,#312e81 55%,#1e3a5f 100%);color:#fff;padding:28px 20px 28px 20px;}
+.sb-avatar{width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff;margin:0 auto 14px;border:3px solid rgba(255,255,255,.25);}
+.sb-name{text-align:center;font-size:14pt;font-weight:800;letter-spacing:-.3px;line-height:1.2;margin-bottom:4px;}
+.sb-title{text-align:center;font-size:8pt;color:#a5b4fc;font-weight:500;letter-spacing:.5px;text-transform:uppercase;margin-bottom:18px;line-height:1.4;}
+.sb-divider{border:none;border-top:1px solid rgba(255,255,255,.12);margin:14px 0;}
+.sb-head{font-size:7.5pt;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px;}
+/* contact */
+.sb-contact{display:flex;flex-direction:column;gap:6px;margin-bottom:2px;}
+.sb-citem{display:flex;align-items:flex-start;gap:7px;font-size:8pt;color:#e0e7ff;line-height:1.4;}
+.sb-cicon{font-size:10pt;flex-shrink:0;margin-top:1px;}
+/* skills */
+.skill-group{margin-bottom:10px;}
+.skill-cat{font-size:7.5pt;font-weight:600;color:#c7d2fe;letter-spacing:.5px;margin-bottom:4px;}
+.skill-pills{display:flex;flex-wrap:wrap;gap:3px;}
+.skill-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:1.5px 6px;font-size:7pt;color:#e0e7ff;font-family:'JetBrains Mono',monospace;}
+/* education sidebar */
+.edu-item{margin-bottom:10px;}
+.edu-deg-s{font-size:8pt;font-weight:700;color:#fff;line-height:1.3;}
+.edu-school{font-size:7.5pt;color:#a5b4fc;margin-top:1px;}
+.edu-yr{font-size:7pt;color:#818cf8;font-family:'JetBrains Mono',monospace;margin-top:1px;}
+.edu-gpa{display:inline-block;background:rgba(99,102,241,.25);border:1px solid rgba(99,102,241,.4);border-radius:3px;padding:1px 5px;font-size:6.5pt;color:#c7d2fe;margin-top:3px;font-family:'JetBrains Mono',monospace;}
+/* lang */
+.lang-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.lang-name{font-size:8pt;color:#e0e7ff;}
+.lang-level{font-size:6.5pt;color:#a5b4fc;font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,.08);padding:1px 5px;border-radius:3px;}
+/* ── MAIN ── */
+.main{padding:28px 24px 24px 24px;display:flex;flex-direction:column;gap:0;}
+/* header strip */
+.main-header{margin-bottom:16px;}
+.main-tagline{font-size:8.5pt;color:#6366f1;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px;}
+/* section */
+.m-sec{margin-bottom:14px;}
+.m-head{font-size:9pt;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#1e1b4b;padding-bottom:4px;border-bottom:2px solid #6366f1;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.m-head-icon{font-size:11pt;}
+/* objective */
+.obj-text{font-size:8.5pt;color:#374151;line-height:1.6;text-align:justify;}
+/* experience */
+.exp-item{margin-bottom:11px;padding-bottom:10px;border-bottom:1px solid #f0f0f5;}
+.exp-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px;}
+.exp-role-m{font-size:9pt;font-weight:700;color:#1e1b4b;}
+.exp-date-m{font-size:7pt;font-family:'JetBrains Mono',monospace;color:#6366f1;background:#eef2ff;border-radius:4px;padding:2px 6px;white-space:nowrap;}
+.exp-company-m{font-size:8pt;color:#6366f1;font-weight:600;margin-bottom:1px;}
+.exp-sup{font-size:7.5pt;color:#6b7280;margin-bottom:4px;font-style:italic;}
+.exp-ul{padding-left:14px;list-style:disc;}
+.exp-ul li{font-size:8pt;color:#374151;margin-bottom:1.5px;line-height:1.5;}
+/* projects */
+.proj-item{margin-bottom:9px;}
+.proj-top-m{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1px;}
+.proj-name-m{font-size:8.5pt;font-weight:700;color:#1e1b4b;}
+.proj-stack{font-size:7pt;color:#6366f1;font-family:'JetBrains Mono',monospace;background:#eef2ff;padding:1px 5px;border-radius:3px;}
+.proj-ul-m{padding-left:14px;list-style:disc;}
+.proj-ul-m li{font-size:8pt;color:#374151;margin-bottom:1px;line-height:1.5;}
+/* certs */
+.cert-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;}
+.cert-dot{width:7px;height:7px;border-radius:50%;background:#6366f1;flex-shrink:0;margin-top:4px;}
+.cert-info{flex:1;}
+.cert-name-m{font-size:8pt;font-weight:700;color:#1e1b4b;}
+.cert-issuer{font-size:7.5pt;color:#6b7280;}
+/* declaration */
+.decl-box{background:#f8f9ff;border:1px solid #e0e7ff;border-radius:6px;padding:10px 14px;margin-top:4px;}
+.decl-text{font-size:7.5pt;color:#374151;line-height:1.5;margin-bottom:10px;}
+.decl-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+.decl-left-m{font-size:7.5pt;color:#6b7280;}
+.decl-right-m{text-align:right;}
+.sig-line-m{border-top:1.5px solid #6366f1;width:90px;margin-bottom:3px;margin-left:auto;}
+.sig-name-m{font-size:8pt;font-weight:700;color:#1e1b4b;}
+.sig-date{font-size:7pt;color:#6b7280;font-family:'JetBrains Mono',monospace;}
+@media print{
+  body{background:#fff;}
+  .page{box-shadow:none;width:100%;min-height:auto;}
+  @page{size:A4;margin:0;}
+}
 </style>
 </head><body>
+<div class="page">
+<!-- ── SIDEBAR ── -->
+<div class="sidebar">
+  <div class="sb-avatar">HH</div>
+  <div class="sb-name">${name}</div>
+  <div class="sb-title">${title}</div>
 
-<!-- HEADER -->
-<div class="cv-name">${name}</div>
-<div class="cv-sub">${title}</div>
-<div class="cv-contact">
-  <span>&#9426; Bangladesh</span>
-  <span>&#9990; ${phone}</span>
-  <span>&#9993; ${email}</span>
-</div>
-<div class="cv-contact">
-  <span>&#9672; ${github}</span>
-  <span>&#9670; ${linkedin}</span>
-</div>
-<hr class="thick"><hr class="thin">
-
-<!-- CAREER OBJECTIVE -->
-<div class="sec-head">Career Objective</div>
-<p class="para">${objective}</p>
-
-<!-- EDUCATION -->
-<div class="sec-head">Education</div>
-<div class="edu-row">
-  <span class="edu-deg">Bachelor of Science (B.Sc.) in Computer Science &amp; Engineering</span>
-  <span class="edu-year">2022 – Present</span>
-</div>
-<div class="edu-inst">Green University of Bangladesh &nbsp;&nbsp; Status: Final Year</div>
-
-<!-- TECHNICAL SKILLS -->
-<div class="sec-head">Technical Skills</div>
-<table class="sk-table">
-  ${skillRows}
-</table>
-
-<!-- PROJECTS -->
-<div class="sec-head">Projects</div>
-<div class="proj-wrap">
-  <div class="proj-head">
-    <span class="proj-name">Internship Hub – Job &amp; Internship Platform</span>
-    <span class="proj-tech">React, Laravel, MySQL</span>
+  <hr class="sb-divider">
+  <div class="sb-head">Contact</div>
+  <div class="sb-contact">
+    <div class="sb-citem"><span class="sb-cicon">📱</span><span>${phone}</span></div>
+    <div class="sb-citem"><span class="sb-cicon">✉</span><span>${email}</span></div>
+    <div class="sb-citem"><span class="sb-cicon">🐙</span><span>${github}</span></div>
+    <div class="sb-citem"><span class="sb-cicon">💼</span><span>${linkedin}</span></div>
+    <div class="sb-citem"><span class="sb-cicon">📍</span><span>Dhaka, Bangladesh</span></div>
   </div>
-  <ul class="proj-ul">
-    <li>Developed a role-based web platform for students, employers, and administrators</li>
-    <li>Implemented JWT authentication, job posting, and application tracking features</li>
-    <li>Built bilingual interface (Bengali/English) with department-wise job filtering</li>
-    <li>Deployed frontend on Vercel with backend API integration</li>
-  </ul>
-</div>
-<div class="proj-wrap">
-  <div class="proj-head">
-    <span class="proj-name">Heart Disease Prediction System</span>
-    <span class="proj-tech">Python, FastAPI, React, Scikit-learn</span>
+
+  <hr class="sb-divider">
+  <div class="sb-head">Technical Skills</div>
+  <div class="skill-group">
+    <div class="skill-cat">Frontend</div>
+    <div class="skill-pills"><span class="skill-pill">React.js</span><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">JavaScript</span></div>
   </div>
-  <ul class="proj-ul">
-    <li>Built a machine learning model to predict heart disease risk with high accuracy</li>
-    <li>Developed REST API backend with FastAPI and interactive React frontend</li>
-    <li>Performed data preprocessing, feature engineering, and model evaluation</li>
-  </ul>
-</div>
-<div class="proj-wrap">
-  <div class="proj-head">
-    <span class="proj-name">Fake News Detection System</span>
-    <span class="proj-tech">Python, Scikit-learn, NLP</span>
+  <div class="skill-group">
+    <div class="skill-cat">Backend</div>
+    <div class="skill-pills"><span class="skill-pill">Laravel</span><span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">FastAPI</span><span class="skill-pill">REST API</span></div>
   </div>
-  <ul class="proj-ul">
-    <li>Designed an ML-based system to classify fake and real news articles</li>
-    <li>Implemented text preprocessing, TF-IDF feature extraction, and model evaluation</li>
-    <li>Achieved reliable classification accuracy using multiple ML algorithms</li>
-  </ul>
+  <div class="skill-group">
+    <div class="skill-cat">AI / ML</div>
+    <div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span></div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-cat">Database &amp; Tools</div>
+    <div class="skill-pills"><span class="skill-pill">MySQL</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">Postman</span><span class="skill-pill">Vercel</span></div>
+  </div>
+  <div class="skill-group">
+    <div class="skill-cat">Security</div>
+    <div class="skill-pills"><span class="skill-pill">Web Pentesting</span><span class="skill-pill">Linux OS</span><span class="skill-pill">OSINT</span></div>
+  </div>
+
+  <hr class="sb-divider">
+  <div class="sb-head">Education</div>
+  <div class="edu-item">
+    <div class="edu-deg-s">B.Sc. in CSE</div>
+    <div class="edu-school">Green University of Bangladesh</div>
+    <div class="edu-yr">2022 – Present · Final Year</div>
+    <div class="edu-gpa">ID: 222002023</div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-deg-s">HSC</div>
+    <div class="edu-school">Govt. Ananda Mohan College, Mymensingh</div>
+    <div class="edu-yr">2020 · EIIN: 111914</div>
+    <div class="edu-gpa">GPA 5.00 — Golden A+</div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-deg-s">SSC</div>
+    <div class="edu-school">Imam Bari High School, Sherpur</div>
+    <div class="edu-yr">2017 · EIIN: 113831</div>
+    <div class="edu-gpa">GPA 5.00 — Golden A+</div>
+  </div>
+
+  <hr class="sb-divider">
+  <div class="sb-head">Languages</div>
+  <div class="lang-item"><span class="lang-name">Bengali</span><span class="lang-level">Native</span></div>
+  <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Professional</span></div>
+  <div class="lang-item"><span class="lang-name">Hindi</span><span class="lang-level">Fluent</span></div>
+  <div class="lang-item"><span class="lang-name">Urdu</span><span class="lang-level">Fluent</span></div>
+  <div class="lang-item"><span class="lang-name">Chinese</span><span class="lang-level">Basic</span></div>
+  <div class="lang-item"><span class="lang-name">Japanese</span><span class="lang-level">Basic</span></div>
 </div>
 
-<!-- CORE KNOWLEDGE -->
-<div class="sec-head">Core Knowledge</div>
-<p class="para">Object-Oriented Programming (OOP), Data Structures &amp; Algorithms, Database Management Systems (DBMS), Software Engineering Fundamentals, System Analysis &amp; Design</p>
-
-<!-- SOFT SKILLS -->
-<div class="sec-head">Soft Skills</div>
-<p class="para">Problem-solving, Team Collaboration, Communication Skills, Quick Learner, Adaptability, Attention to Detail</p>
-<p class="para" style="margin-top:4px"><strong>Languages:</strong> Bengali (Native), English (Professional) &nbsp;&nbsp; <strong>Availability:</strong> Immediate Joining</p>
-
-<!-- DECLARATION -->
-<div class="sec-head">Declaration</div>
-<div class="decl-row">
-  <div class="decl-left">
-    I hereby declare that the information provided above is true<br>and correct to the best of my knowledge.
+<!-- ── MAIN ── -->
+<div class="main">
+  <div class="main-header">
+    <div class="main-tagline">Curriculum Vitae — ${today}</div>
   </div>
-  <div class="decl-right">
-    <div class="sig-line"></div>
-    <div>Signature</div>
-    <div style="margin-top:10px;font-weight:700">${name}</div>
-    <div>Date: ${today}</div>
+
+  <!-- OBJECTIVE -->
+  <div class="m-sec">
+    <div class="m-head"><span class="m-head-icon">🎯</span>Career Objective</div>
+    <p class="obj-text">${objective}</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="m-sec">
+    <div class="m-head"><span class="m-head-icon">💼</span>Work Experience</div>
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role-m">Software Engineer (Intern)</div>
+        <div class="exp-date-m">Feb 2026 – Apr 2026</div>
+      </div>
+      <div class="exp-company-m">Red Data (Pvt.) Ltd. — Gulshan Avenue, Dhaka 1212</div>
+      <div class="exp-sup">Supervisor: Engr. Rukonuzzaman (Software Engineer) · rukon@reddata.com.bd</div>
+      <ul class="exp-ul">
+        <li>Contributing to full-stack software development in a live production environment</li>
+        <li>Working in an agile team under CEO Moin Uddin Ahmed</li>
+        <li>Building enterprise software solutions and real-world engineering skills</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role-m">AR/VR Developer Training</div>
+        <div class="exp-date-m">2026 · Completed</div>
+      </div>
+      <div class="exp-company-m">Battery Low Interactive Ltd.</div>
+      <ul class="exp-ul">
+        <li>Completed specialised AR/VR development training with hands-on live project work</li>
+        <li>Gained practical experience in XR development using Unity and immersive technologies</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role-m">Business Development Executive Manager</div>
+        <div class="exp-date-m">2022 – Present (4+ yrs)</div>
+      </div>
+      <div class="exp-company-m">Mahin Enterprise — Full-time</div>
+      <ul class="exp-ul">
+        <li>Leading business development strategy, client acquisition &amp; partnerships</li>
+        <li>Multilingual operations: Bengali, English, Hindi, Urdu; learning Chinese &amp; Japanese</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="m-sec">
+    <div class="m-head"><span class="m-head-icon">🚀</span>Projects</div>
+    <div class="proj-item">
+      <div class="proj-top-m">
+        <span class="proj-name-m">Internship Hub — Job &amp; Internship Platform</span>
+        <span class="proj-stack">React · Laravel · MySQL</span>
+      </div>
+      <ul class="proj-ul-m">
+        <li>Role-based platform for students, employers &amp; admins with JWT authentication</li>
+        <li>Bilingual interface (Bengali/English), department filtering, Vercel deployment</li>
+      </ul>
+    </div>
+    <div class="proj-item">
+      <div class="proj-top-m">
+        <span class="proj-name-m">Heart Disease Prediction System</span>
+        <span class="proj-stack">Python · FastAPI · React · Scikit-learn</span>
+      </div>
+      <ul class="proj-ul-m">
+        <li>ML model for heart disease risk prediction with REST API and interactive frontend</li>
+        <li>Data preprocessing, feature engineering, and model evaluation pipeline</li>
+      </ul>
+    </div>
+    <div class="proj-item">
+      <div class="proj-top-m">
+        <span class="proj-name-m">Fake News Detection System</span>
+        <span class="proj-stack">Python · NLP · Scikit-learn</span>
+      </div>
+      <ul class="proj-ul-m">
+        <li>ML-based classifier using TF-IDF feature extraction and multiple algorithms</li>
+      </ul>
+    </div>
+    <div class="proj-item">
+      <div class="proj-top-m">
+        <span class="proj-name-m">IMAP Bangladesh — AI-Powered Service Platform</span>
+        <span class="proj-stack">React · Node.js · AI</span>
+      </div>
+      <ul class="proj-ul-m">
+        <li>Full-stack emergency &amp; household services platform covering Bangladesh</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="m-sec">
+    <div class="m-head"><span class="m-head-icon">🏅</span>Certifications &amp; Training</div>
+    <div class="cert-row"><div class="cert-dot"></div><div class="cert-info"><div class="cert-name-m">Cyber Security &amp; Ethical Hacking</div><div class="cert-issuer">Arena Web Security · 18 Weeks · 2023–2024 · Certified</div></div></div>
+    <div class="cert-row"><div class="cert-dot"></div><div class="cert-info"><div class="cert-name-m">AR/VR Development Training</div><div class="cert-issuer">Battery Low Interactive Ltd. · 2026 · Completed</div></div></div>
+    <div class="cert-row"><div class="cert-dot"></div><div class="cert-info"><div class="cert-name-m">Full-Stack Web Development</div><div class="cert-issuer">Online Certification</div></div></div>
+    <div class="cert-row"><div class="cert-dot"></div><div class="cert-info"><div class="cert-name-m">Machine Learning &amp; Data Science</div><div class="cert-issuer">Online Certification</div></div></div>
+    <div class="cert-row"><div class="cert-dot"></div><div class="cert-info"><div class="cert-name-m">Internship Recommendation Letter</div><div class="cert-issuer">Green University of Bangladesh · CSE Dept. · Feb 2026</div></div></div>
+  </div>
+
+  <!-- DECLARATION -->
+  <div class="m-sec">
+    <div class="m-head"><span class="m-head-icon">✍</span>Declaration</div>
+    <div class="decl-box">
+      <div class="decl-text">I hereby declare that all information provided in this CV is true and correct to the best of my knowledge and belief.</div>
+      <div class="decl-bottom">
+        <div class="decl-left-m">Date: ${today}<br>Place: Dhaka, Bangladesh</div>
+        <div class="decl-right-m">
+          <div class="sig-line-m"></div>
+          <div class="sig-name-m">${name}</div>
+          <div class="sig-date">Applicant Signature</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
+</div>
 </body></html>`;
 
-  // ── EXPERIENCE SECTION ──
-  const expSection = `
-<div class="sec-head">Work Experience</div>
-<div class="edu-row" style="margin-bottom:1px"><span class="edu-deg">Software Engineer (Intern)</span><span class="edu-year">Feb 2026 – Apr 2026</span></div>
-<div class="edu-inst">Red Data (Pvt.) Ltd. &nbsp;&middot;&nbsp; Gulshan Avenue, Dhaka 1212</div>
-<div style="font-size:9.5pt;color:#333;margin-bottom:1px;">Industrial Supervisor: Engr. Rukonuzzaman &nbsp;&middot;&nbsp; Software Engineer &nbsp;&middot;&nbsp; rukon@reddata.com.bd</div>
-<ul class="proj-ul" style="margin:3px 0 10px;">
-  <li>Contributing to full-stack software development in a live production environment</li>
-  <li>Working in an agile team environment under CEO Moin Uddin Ahmed</li>
-  <li>Building enterprise software solutions and developing real-world engineering skills</li>
-</ul>
-<div class="edu-row" style="margin-bottom:1px"><span class="edu-deg">Business Development Executive Manager</span><span class="edu-year">2022 – Present</span></div>
-<div class="edu-inst">Mahin Enterprise &nbsp;&middot;&nbsp; Full-time &nbsp;&middot;&nbsp; 4+ Years</div>
-<ul class="proj-ul" style="margin:3px 0 0;">
-  <li>Leading business development strategy, client acquisition &amp; partnerships</li>
-  <li>Leveraging multilingual skills (Bengali, English, Hindi, Urdu) and learning Chinese &amp; Japanese (Basic) for international business</li>
-</ul>`;
-
-  const blob = new Blob([html.replace('<!-- CAREER OBJECTIVE -->', expSection+'\n<!-- CAREER OBJECTIVE -->')], {type:'text/html'});
+  const blob = new Blob([html], {type:'text/html'});
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href = url;
