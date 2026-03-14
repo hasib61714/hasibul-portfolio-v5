@@ -5,3 +5,6 @@ __pycache__/
 # GitHub profile repo helper files (not part of portfolio)
 github_profile_README.md
 github_profile_*.yml
+
+# Individual repo README helper files
+readme_*.md
