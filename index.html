@@ -11,7 +11,9 @@
 <meta property="og:description" content="Software Engineer Intern at Red Data (Pvt.) Ltd. Open to full-time roles. Skilled in React, Laravel, Python, ML &amp; AR/VR.">
 <meta property="og:url" content="https://hasib61714.github.io/hasibul-portfolio-v5/">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://hasib61714.github.io/hasibul-portfolio-v5/photo.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hasib61714.github.io/hasibul-portfolio-v5/photo.jpeg">
 <meta name="twitter:title" content="Md. Hasibul Hasan — Full-Stack Developer">
 <meta name="twitter:description" content="Software Engineer Intern at Red Data · AR/VR @ Battery Low Interactive · React, Laravel, Python, ML. Open to full-time.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -37,7 +39,8 @@
 }
 
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;transition:background .4s,color .4s;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;transition:background .4s,color .4s;}
+@media(pointer:fine){body{cursor:none;}}
 
 /* ══ LOADER ══ */
 #loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .6s,visibility .6s;}
@@ -335,6 +338,7 @@ input,textarea,select{width:100%;background:rgba(255,255,255,.04);border:1px sol
 input::placeholder,textarea::placeholder{color:var(--muted);}
 input:focus,textarea:focus,select:focus{border-color:rgba(99,102,241,.5);box-shadow:0 0 0 3px rgba(99,102,241,.1);}
 select option{background:#0a0a14;color:#f1f5f9;}
+[data-theme="light"] select option{background:#ffffff;color:#1e293b;}
 textarea{min-height:110px;}
 .form-btn{width:100%;padding:14px;border-radius:40px;background:linear-gradient(135deg,var(--c1),var(--c3));color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .3s;box-shadow:0 0 24px rgba(99,102,241,.25);display:flex;align-items:center;justify-content:center;gap:10px;}
 .form-btn:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(99,102,241,.45);}
@@ -493,13 +497,15 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   footer{padding:28px 24px;flex-direction:column;align-items:flex-start;}
   #btt{bottom:20px;right:20px;}
   .ham-btn{display:flex;}
-  .cert-grid{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:repeat(2,1fr);}
   .exp-card{flex-direction:column;gap:16px;padding:24px 20px;}
   .exp-logo{width:44px;height:44px;font-size:22px;}
   .exp-header{flex-wrap:wrap;}
   .exp-role{font-size:16px;}
   .exp-period{font-size:10.5px;}
-  .hero-title{font-size:clamp(38px,8vw,72px);}
+  .hero-name{font-size:clamp(38px,8vw,72px);}
+  .edu-cols{grid-template-columns:1fr;gap:32px;}
+  .know-grid{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
   .toast-wrap{right:16px;left:16px;bottom:80px;}
   .toast{max-width:100%;}
@@ -683,7 +689,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 <div class="bg"><div class="bg-c"></div></div>
 
 <!-- ══ BACK TO TOP ══ -->
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="btt" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- ══ NAV ══ -->
 <nav>
@@ -710,14 +716,14 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 <!-- ══ MOBILE MENU ══ -->
 <div class="mob-menu" id="mob-menu">
   <button class="mob-close" onclick="toggleMob()" aria-label="Close menu">✕</button>
-  <a href="#skills" onclick="toggleMob()">Skills</a>
-  <a href="#education" onclick="toggleMob()">Education</a>
-  <a href="#experience" onclick="toggleMob()">Experience</a>
-  <a href="#projects" onclick="toggleMob()">Projects</a>
-  <a href="#certifications" onclick="toggleMob()">Certificates</a>
-  <a href="#github" onclick="toggleMob()">GitHub</a>
-  <a href="#docs" onclick="toggleMob()">Documents</a>
-  <a href="#contact" onclick="toggleMob()">Contact</a>
+  <a href="#skills" onclick="toggleMob()" data-en="Skills" data-bn="দক্ষতা">Skills</a>
+  <a href="#education" onclick="toggleMob()" data-en="Education" data-bn="শিক্ষা">Education</a>
+  <a href="#experience" onclick="toggleMob()" data-en="Experience" data-bn="অভিজ্ঞতা">Experience</a>
+  <a href="#projects" onclick="toggleMob()" data-en="Projects" data-bn="প্রকল্প">Projects</a>
+  <a href="#certifications" onclick="toggleMob()" data-en="Certificates" data-bn="সার্টিফিকেট">Certificates</a>
+  <a href="#github" onclick="toggleMob()" data-en="GitHub" data-bn="গিটহাব">GitHub</a>
+  <a href="#docs" onclick="toggleMob()" data-en="Documents" data-bn="ডকুমেন্ট">Documents</a>
+  <a href="#contact" onclick="toggleMob()" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -942,7 +948,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 
 <!-- ══ EXPERIENCE ══ -->
 <section class="sec pt-0" id="experience">
-  <div class="eyebrow rv" data-en="Professional Journey" data-bn="পেশাদার যাত্রা">পেশাদার যাত্রা</div>
+  <div class="eyebrow rv" data-en="Professional Journey" data-bn="পেশাদার যাত্রা">Professional Journey</div>
   <h2 class="sec-title rv" data-en="Work Experience" data-bn="কাজের অভিজ্ঞতা">Work<br>Experience</h2>
   <div class="exp-grid">
     <div class="exp-card rv">
@@ -967,7 +973,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
       </div>
     </div>
     <div class="exp-card rv">
-      <div class="exp-logo">�</div>
+      <div class="exp-logo">🏢</div>
       <div class="exp-body">
         <div class="exp-header">
           <div>
@@ -1081,6 +1087,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
           <li data-en="TF-IDF feature extraction with NLP preprocessing pipeline" data-bn="NLP প্রিপ্রসেসিং পাইপলাইন সহ TF-IDF ফিচার নিষ্কাশন">TF-IDF feature extraction with NLP preprocessing pipeline</li>
           <li data-en="Multiple algorithms evaluated for reliable accuracy" data-bn="নির্ভরযোগ্য নির্ভুলতার জন্য একাধিক অ্যালগরিদম মূল্যায়িত">Multiple algorithms evaluated for reliable accuracy</li>
         </ul>
+        <a href="https://github.com/hasib61714/Fake-News-Detector" target="_blank" rel="noopener noreferrer" class="pgh-link">🐙 GitHub →</a>
       </div>
       <div class="parr">→</div>
     </div>
@@ -1245,8 +1252,8 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
 
 <!-- ══ GITHUB STATS ══ -->
 <section class="sec pt-0" id="github">
-  <div class="eyebrow rv">GitHub Activity</div>
-  <h2 class="sec-title rv">Open Source &amp;<br>Contributions</h2>
+  <div class="eyebrow rv" data-en="GitHub Activity" data-bn="গিটহাব কার্যক্রম">GitHub Activity</div>
+  <h2 class="sec-title rv" data-en="Open Source &amp; Contributions" data-bn="ওপেন সোর্স ও অবদান">Open Source &amp;<br>Contributions</h2>
   <div class="gh-username rv">
     <div class="gh-avatar">
       <img src="https://github.com/hasib61714.png" alt="hasib61714" onerror="this.parentElement.innerHTML='HH'">
@@ -1402,7 +1409,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
   <div class="contact-grid">
     <div class="rv-l">
       <h2 class="contact-big" data-en="Let's Build Something Amazing." data-bn="চলুন কিছু অসাধারণ তৈরি করি।">Let's Build<br>Something<br><span class="grad">Amazing.</span></h2>
-      <p class="contact-lead" data-en="I'm actively looking for internship opportunities. Whether you have a role or just want to connect — reach out!" data-bn="আমি সক্রিয়ভাবে ইন্টার্নশিপের সুযোগ খুঁজছি। কোনো ভূমিকা থাকলে বা যোগাযোগ করতে চাইলে জানান!">I'm actively looking for internship opportunities. Whether you have a role or just want to connect — reach out!</p>
+      <p class="contact-lead" data-en="Currently a Software Engineer Intern at Red Data and open to full-time roles. Whether you have an opportunity or just want to connect — reach out!" data-bn="বর্তমানে রেড ডেটায় সফটওয়্যার ইঞ্জিনিয়ার ইন্টার্ন এবং ফুল-টাইম পদের জন্য উন্মুক্ত। কোনো সুযোগ থাকলে বা যোগাযোগ করতে চাইলে জানান!">Currently a Software Engineer Intern at Red Data and open to full-time roles. Whether you have an opportunity or just want to connect — reach out!</p>
       <div class="contact-chips">
         <a href="mailto:mh.hasan14200@gmail.com" class="cchip"><div class="cchip-icon">✉️</div><div><div class="cchip-label">Email</div><div class="cchip-val">mh.hasan14200@gmail.com</div></div></a>
         <a href="tel:+8801794517497" class="cchip"><div class="cchip-icon">📱</div><div><div class="cchip-label">Phone</div><div class="cchip-val">+880 1794 517497</div></div></a>
@@ -1413,7 +1420,7 @@ footer{position:relative;z-index:1;padding:36px 80px;border-top:1px solid var(--
     <div class="rv-r">
       <div class="form-card">
         <div class="form-title" data-en="Send a Message" data-bn="একটি বার্তা পাঠান">Send a Message</div>
-        <div class="form-sub" data-en="I'll reply within 24 hours." data-bn="২৪ ঘণ্টার মধ্যে উত্তর দেব।">আমাকে সরাসরি মেসেজ পাঠান — ২৪ ঘণ্টার মধ্যে reply পাবেন।</div>
+        <div class="form-sub" data-en="I'll reply within 24 hours." data-bn="২৪ ঘণ্টার মধ্যে উত্তর দেব।">I'll reply within 24 hours.</div>
         <div id="cf">
           <div class="form-row">
             <div><label>Your Name</label><input id="fn" placeholder="John Doe"></div>
@@ -1886,15 +1893,16 @@ body{font-family:'Inter',Arial,sans-serif;background:#f4f6fb;color:#1a1a2e;font-
 
 // ══ COVER LETTER GENERATOR ══
 function generateCoverLetter(){
-  const name    = document.getElementById('g-name').value.trim()     || 'Md. Hasibul Hasan';
-  const email   = document.getElementById('g-email').value.trim()    || 'mh.hasan14200@gmail.com';
-  const phone   = document.getElementById('g-phone').value.trim()    || '+880 1794 517497';
-  const github  = document.getElementById('g-github').value.trim()   || 'github.com/hasib61714';
-  const linkedin= document.getElementById('g-linkedin').value.trim() || 'linkedin.com/in/md-hasibul-hasan-10749537a';
-  const company = document.getElementById('g-company').value.trim()  || 'Red Data (Pvt.) Ltd.';
-  const position= document.getElementById('g-position').value.trim() || 'Software Engineer Intern';
-  const hr      = document.getElementById('g-hr').value.trim()       || 'The Hiring Manager';
-  const compAddr= document.getElementById('g-comp-addr').value.trim()|| 'Dhaka, Bangladesh';
+  const g=id=>{ const el=document.getElementById(id); return el?el.value.trim():''; };
+  const name    = g('g-name')     || 'Md. Hasibul Hasan';
+  const email   = g('g-email')    || 'mh.hasan14200@gmail.com';
+  const phone   = g('g-phone')    || '+880 1794 517497';
+  const github  = g('g-github')   || 'github.com/hasib61714';
+  const linkedin= g('g-linkedin') || 'linkedin.com/in/md-hasibul-hasan-10749537a';
+  const company = g('g-company')  || 'Red Data (Pvt.) Ltd.';
+  const position= g('g-position') || 'Software Engineer Intern';
+  const hr      = g('g-hr')       || 'The Hiring Manager';
+  const compAddr= g('g-comp-addr')|| 'Dhaka, Bangladesh';
   const today   = new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
 
   const cl = `<!DOCTYPE html>
@@ -1981,7 +1989,7 @@ function toggleMob(){
 
 // ══ ACTIVE NAV ON SCROLL ══
 (function(){
-  const secs=document.querySelectorAll('section[id]');
+  const secs=document.querySelectorAll('section[id], div[id]');
   const links=document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll',()=>{
     let cur='';
@@ -1997,9 +2005,13 @@ function submitForm(){
   const s=document.getElementById('fs').value;
   const m=document.getElementById('fm').value.trim();
   if(!n||!e||!s||!m){ toast('Please fill in all fields!','error'); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){ toast('Please enter a valid email!','error'); return; }
+  const body='Name: '+n+'\nEmail: '+e+'\nMessage:\n\n'+m;
+  const mailto='mailto:mh.hasan14200@gmail.com?subject='+encodeURIComponent('[Portfolio] '+s+' — from '+n)+'&body='+encodeURIComponent(body);
+  window.open(mailto,'_self');
   document.getElementById('cf').style.display='none';
   document.getElementById('fs-ok').classList.add('show');
-  toast('Message sent! I\'ll reply within 24 hours.','success',5000);
+  toast('Opening your email client — message ready to send! 📧','success',5000);
 }
 
 // ══ AUTO GITHUB REPOS (live sync) ══
@@ -2081,7 +2093,6 @@ function submitForm(){
       }
     }
   } catch(err) {
-    console.warn('GitHub repos failed:', err);
     grid.innerHTML = `<p class="gh-repos-err">Could not load. <a href="https://github.com/${USER}" target="_blank" rel="noopener noreferrer">View on GitHub →</a></p>`;
   }
 })();
