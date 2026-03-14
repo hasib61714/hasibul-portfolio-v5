@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+
+# GitHub profile repo helper files (not part of portfolio)
+github_profile_README.md
+github_profile_*.yml
